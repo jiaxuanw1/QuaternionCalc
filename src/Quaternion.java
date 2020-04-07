@@ -76,9 +76,9 @@ public class Quaternion {
 	 */
 	public Quaternion multiply(Quaternion q) {
 		return new Quaternion(a * q.getA() - b * q.getB() - c * q.getC() - d * q.getD(),
-							a * q.getB() + b * q.getA() + c * q.getD() - d * q.getC(),
-							a * q.getC() - b * q.getD() + c * q.getA() + d * q.getB(),
-							a * q.getD() + b * q.getC() - c * q.getB() + d * q.getA());
+				a * q.getB() + b * q.getA() + c * q.getD() - d * q.getC(),
+				a * q.getC() - b * q.getD() + c * q.getA() + d * q.getB(),
+				a * q.getD() + b * q.getC() - c * q.getB() + d * q.getA());
 	}
 
 	/**
@@ -111,21 +111,46 @@ public class Quaternion {
 	}
 
 	/**
-	 * Returns the norm of this quaternion.
+	 * Returns the norm of this quaternion in decimal form.
 	 * 
-	 * @return the norm
+	 * @return the norm in decimal form
 	 */
 	public double getNorm() {
 		return Math.sqrt(a * a + b * b + c * c + d * d);
 	}
 
 	/**
-	 * Returns the inverse of this quaternion.
+	 * Returns the norm of this quaternion in radical form.
 	 * 
-	 * @return the inverse quaternion
+	 * @return the norm in radical form
+	 */
+	public String getNormRadical() {
+		double normSquared = a * a + b * b + c * c + d * d;
+		return "sqrt(" + normSquared + ")";
+	}
+
+	/**
+	 * Returns the inverse of this quaternion in decimal form.
+	 * 
+	 * @return the inverse quaternion in decimal form
 	 */
 	public Quaternion getInverse() {
 		return getConjugate().divide(getNorm() * getNorm());
+	}
+
+	/**
+	 * Returns the inverse of this quaternion in fraction form.
+	 * 
+	 * @return the inverse quaternion in fraction form
+	 */
+	public String getInverseFraction() {
+		Quaternion conj = getConjugate();
+		double normSquared = getNorm() * getNorm();
+		String aInv = conj.getA() + "/" + normSquared;
+		String bInv = conj.getB() + "/" + normSquared;
+		String cInv = conj.getC() + "/" + normSquared;
+		String dInv = conj.getD() + "/" + normSquared;
+		return "[" + aInv + ", " + bInv + ", " + cInv + ", " + dInv + "]";
 	}
 
 	/**

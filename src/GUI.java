@@ -244,8 +244,9 @@ public class GUI {
 						double dVal = Double.parseDouble(d1.getText());
 						q1 = new Quaternion(aVal, bVal, cVal, dVal);
 
-						output = "Conjugate: " + q1.getConjugate() + "\r\n\r\nInverse: " + q1.getInverse()
-								+ "\r\n\r\nNorm: " + q1.getNorm();
+						output = "Conjugate: \r\n" + q1.getConjugate() + "\r\n\r\nInverse: \r\n" + q1.getInverseFraction()
+								+ "\r\n" + q1.getInverse() + "\r\n\r\nNorm: \r\n" + q1.getNormRadical()
+								+ "\r\n" + q1.getNorm();
 						JOptionPane.showMessageDialog(null, output);
 					} catch (Exception e) {
 						JOptionPane.showMessageDialog(null, "Please enter a valid quaternion");
