@@ -3,7 +3,7 @@
 A Java program for performing basic operations with quaternions as well as finding the conjugate, norm, and inverse of a quaternion.
 
 Quaternions are a four-dimensional number system that extends the complex numbers. 
-They can be used to describe rotation in three dimensions. Learn more about complex numbers [here](https://mathworld.wolfram.com/Quaternion.html).
+They can be used to describe rotation in three dimensions. Learn more about quaternions [here](https://mathworld.wolfram.com/Quaternion.html).
 
 ## Usage
 
