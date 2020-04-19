@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
 
 public class GUI {
 	private JFrame frame;
@@ -32,9 +33,16 @@ public class GUI {
 	private void initialize() {
 		// Frame
 		frame = new JFrame("QuaternionCalc");
-		frame.setBounds(100, 100, 800, 500);
+		frame.setBounds(100, 100, 600, 350);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+
+		// Sets system theme
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		// First quaternion field
 		label1 = new JLabel("Quaternion q1:");
