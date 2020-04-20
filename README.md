@@ -2,12 +2,13 @@
 
 A Java program for performing basic operations with quaternions as well as finding the conjugate, norm, and inverse of a quaternion.
 
-Quaternions are a four-dimensional number system that extends the complex numbers. 
-They can be used to describe rotation in three dimensions. Learn more about quaternions [here](https://mathworld.wolfram.com/Quaternion.html).
+Quaternions are a four-dimensional number system that extends the complex numbers. They can be used to describe rotation in three dimensions. Learn more about quaternions [here](https://mathworld.wolfram.com/Quaternion.html).
 
 ## Usage
 
 The app allows you to input one or two quaternions. Underneath them, you can select a mathematical operation (i.e. addition, subtraction, etc.).
+
+![QuaternionCalc Interface](https://raw.githubusercontent.com/jiaxuanw1/QuaternionCalc/master/QuaternionCalc.png  "QuaternionCalc Interface") 
 
 To calculate the conjugate, norm, and inverse of a quaternion, input the quaternion as q1 and click Calculate.
 
